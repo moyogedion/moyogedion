@@ -25,22 +25,16 @@ Two questions I ask when building a system: What will the person using it have t
 This is a design pattern I use for systems that depend on another service. It shows what should happen when the outcome is unclear.
 
 ```mermaid
-flowchart TD
-    A[Customer or staff request] --> B[Check identity and permissions]
-    B --> C[Record the request and its reference]
-    C --> D[Call the bank, payment or tax service]
-    D --> E{Outcome confirmed?}
-    E -->|Yes| F[Update status and show the result]
-    E -->|No| G[Check status and reconcile]
+graph TD
+    A["Customer or staff request"] --> B["Check identity and permissions"]
+    B --> C["Record request and reference"]
+    C --> D["Call the external service"]
+    D --> E{"Outcome confirmed?"}
+    E -->|Yes| F["Record and show the result"]
+    E -->|Unclear| G["Check status and reconcile"]
     G -->|Resolved| F
-    G -->|Still unclear| H[Send to an operator for review]
+    G -->|Unresolved| H["Send for operator review"]
     H --> F
-    classDef entry fill:#25346b,stroke:#818cf8,color:#fff
-    classDef process fill:#134e4a,stroke:#2dd4bf,color:#fff
-    classDef exception fill:#713f12,stroke:#fbbf24,color:#fff
-    class A,B entry
-    class C,D,F process
-    class E,G,H exception
 ```
 
 ### Map of my work
