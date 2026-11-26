@@ -4,7 +4,7 @@
 
 Gedion Moyo leads product strategy and software architecture across banking, payments, business operations, AI and trade. His focus is on where a shared platform makes sense, what each institution needs to control, and what teams can operate and change after launch.
 
-[MobiSoft](https://mobisoft.co.zw) · [Retriqa](https://retriqa.ai) · [LinkedIn](https://www.linkedin.com/in/gedionmoyo/)
+[MobiSoft](https://mobisoft.co.zw) · [OmniPlat](https://omniplat.ai) · [LinkedIn](https://www.linkedin.com/in/gedionmoyo/)
 
 ## Selected work
 
