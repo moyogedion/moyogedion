@@ -2,23 +2,23 @@
 
 **Founder & CEO, MobiSoft and Retriqa · Harare, Zimbabwe**
 
-I lead software businesses and set the architectural direction for the products we build. My work spans banking and payments, business software, AI and trade. In each, my role is to decide what is worth building, what should be shared across products, and what needs to stay specific to the institution or market.
+Gedion Moyo leads product strategy and software architecture across banking, payments, business operations, AI and trade. His focus is on where a shared platform makes sense, what each institution needs to control, and what teams can operate and change after launch.
 
 [MobiSoft](https://mobisoft.co.zw) · [Retriqa](https://retriqa.ai) · [LinkedIn](https://www.linkedin.com/in/gedionmoyo/)
 
 ## Selected work
 
-| Area | Work |
+| Area | Products and what they make possible |
 | --- | --- |
-| **Banking and payments** | My team at MobiSoft designed and delivered MyZB for ZB Financial Holdings and A360 mobile and USSD banking for BancABC Zimbabwe. With [OmniPlat](https://omniplat.ai), we’re building a common foundation for banking across mobile, web, USSD, WhatsApp and agent networks. |
-| **Business operations** | [VasBox](https://vasbox.co.zw) connects invoicing and receipts to ZIMRA. Our [ERPNext work](https://www.erp.co.zw) brings that capability directly into the sales workflow, without requiring a separate fiscal invoicing system. |
-| **AI and information** | I founded [Retriqa](https://retriqa.ai) to help teams work with their own documents and verify the sources behind an answer. With [Syntheda](https://www.techzim.co.zw/2026/02/zim-fintech-veteran-builds-an-entire-news-platform-using-ai-no-human-written-code/), I explored how AI agents could run an editorial workflow for a publication covering African markets, business and technology. |
-| **Trade and logistics** | For [Market Lense](https://marketlense.co.zw), I’ve worked on making it easier to get a freight estimate and turn it into a firm quote across road, rail, air and sea. |
-| **Consumer finance** | In 2015 I built [MobiLedger](https://www.techzim.co.zw/2015/02/zim-developer-comes-ecocash-ledger-app-monitor-m-money-transactions/) to help people track EcoCash transactions. In 2019, the MobiSoft team took [CashLedger](https://www.techzim.co.zw/2019/07/local-finance-app-cashledger-now-available-globally/) beyond Zimbabwe. |
+| **Banking and payments** | **MyZB** gives ZB Financial Holdings customers a digital banking channel. **A360** provides BancABC Zimbabwe customers with mobile app and USSD access. [OmniPlat](https://omniplat.ai) takes the platform approach further: banks can add customer and agent channels without rebuilding the onboarding, payment and servicing workflows behind them. |
+| **Business operations and tax** | [VasBox](https://vasbox.co.zw) connects invoicing and point-of-sale systems to ZIMRA. The [ERPNext integration](https://www.erp.co.zw) connects directly to ZIMRA, so sales teams can issue fiscal invoices and receipts in the same workflow they use to record the sale. |
+| **AI and information** | [Retriqa](https://retriqa.ai) lets teams ask questions of their own documents and check the sources before acting on an answer. [Syntheda](https://www.techzim.co.zw/2026/02/zim-fintech-veteran-builds-an-entire-news-platform-using-ai-no-human-written-code/) explores how AI agents can run an editorial workflow for a publication on African markets, business and technology. |
+| **Trade and logistics** | [Market Lense](https://marketlense.co.zw) gives importers a way to estimate freight across road, rail, air and sea, then provide the shipment details needed for a firm quote. That separates early budgeting from the work of arranging a shipment. |
+| **Consumer finance** | [MobiLedger](https://www.techzim.co.zw/2015/02/zim-developer-comes-ecocash-ledger-app-monitor-m-money-transactions/) helped EcoCash users track and categorise transactions in 2015. [CashLedger](https://www.techzim.co.zw/2019/07/local-finance-app-cashledger-now-available-globally/) took the idea beyond Zimbabwe in 2019, turning transaction messages into a usable spending record. |
 
-## How I think about platform architecture
+## Platform architecture
 
-A bank should be able to add a channel without rebuilding the workflows behind it. The channels can feel different while payment rules, approvals and records stay consistent. The diagram shows the boundaries I look for when designing that kind of platform.
+A bank should be able to add a channel without rebuilding the workflows behind it. Customer and staff experiences can differ while payment rules, approvals and records stay consistent across channels.
 
 ```mermaid
 graph TD
@@ -30,7 +30,7 @@ graph TD
     E --> F
 ```
 
-## Map of my work
+## Portfolio map
 
 ```mermaid
 mindmap
@@ -50,8 +50,6 @@ mindmap
       Delivery and operations
 ```
 
-## What I look for in a design
+## Architecture decisions
 
-Can the next product reuse it? Can the institution operate it without the people who built it? Can a team change one part without putting the rest at risk? Those questions guide what I standardise, where I leave teams room to choose, and what I’m willing to put into production.
-
-Most of my GitHub work is in private repositories. The links above show the public side of that work.
+Shared workflows are worth standardising when they let teams add products or channels without duplicating the rules. Institutions still need control over their own policy and approvals. A design is ready for production when the people running it can see what happened, resolve exceptions and change one part without putting the rest at risk.
