@@ -1,62 +1,57 @@
 # Gedion Moyo
 
-**Software founder and hands-on builder · Harare, Zimbabwe**
+**Founder & CEO, MobiSoft and Retriqa · Harare, Zimbabwe**
 
-I founded [MobiSoft](https://mobisoft.co.zw) and [Retriqa](https://retriqa.ai). I lead teams and stay close to the work: designing products, building integrations, reviewing code and getting releases out. A lot of my work is in financial services, but the problems I like show up everywhere: moving money, making sense of documents, getting goods across borders, and giving people simpler ways to do work they already understand.
+I lead software businesses and set the architectural direction for the products we build. My work spans banking and payments, business software, AI and trade. In each, my role is to decide what is worth building, what should be shared across products, and what needs to stay specific to the institution or market.
 
-[MobiSoft](https://mobisoft.co.zw) · [LinkedIn](https://www.linkedin.com/in/gedionmoyo/)
+[MobiSoft](https://mobisoft.co.zw) · [Retriqa](https://retriqa.ai) · [LinkedIn](https://www.linkedin.com/in/gedionmoyo/)
 
 ## Selected work
 
-| Area | What I’ve worked on |
+| Area | Work |
 | --- | --- |
-| **Banking and payments** | With the MobiSoft team, I helped design and deliver MyZB for ZB Financial Holdings and A360 mobile and USSD banking for BancABC Zimbabwe. That work continues in [OmniPlat](https://omniplat.ai), which brings web, mobile, USSD, WhatsApp and agency banking together with the tools bank staff use to run them. |
-| **Business software and tax** | [VasBox](https://vasbox.co.zw) connects invoices and receipts to ZIMRA. I’m also working on [ERPNext for Zimbabwean businesses](https://www.erp.co.zw), where fiscal invoices and POS receipts go directly to ZIMRA from the sales workflow. |
-| **AI and publishing** | [Retriqa](https://retriqa.ai) helps teams ask questions about their documents and trace answers back to the source. I built **Syntheda** to explore how AI could support a publication covering African business, markets and technology. [The Syntheda story](https://www.techzim.co.zw/2026/02/zim-fintech-veteran-builds-an-entire-news-platform-using-ai-no-human-written-code/) |
-| **Trade and logistics** | For [Market Lense](https://marketlense.co.zw), I’ve worked on making freight quotes and requests easier to handle across road, rail, air and sea. Customers can get an estimate before supplying everything needed for a firm quote. |
+| **Banking and payments** | My team at MobiSoft designed and delivered MyZB for ZB Financial Holdings and A360 mobile and USSD banking for BancABC Zimbabwe. With [OmniPlat](https://omniplat.ai), we’re building a common foundation for banking across mobile, web, USSD, WhatsApp and agent networks. |
+| **Business operations** | [VasBox](https://vasbox.co.zw) connects invoicing and receipts to ZIMRA. Our [ERPNext work](https://www.erp.co.zw) brings that capability directly into the sales workflow, without requiring a separate fiscal invoicing system. |
+| **AI and information** | I founded [Retriqa](https://retriqa.ai) to help teams work with their own documents and verify the sources behind an answer. With [Syntheda](https://www.techzim.co.zw/2026/02/zim-fintech-veteran-builds-an-entire-news-platform-using-ai-no-human-written-code/), I explored how AI agents could run an editorial workflow for a publication covering African markets, business and technology. |
+| **Trade and logistics** | For [Market Lense](https://marketlense.co.zw), I’ve worked on making it easier to get a freight estimate and turn it into a firm quote across road, rail, air and sea. |
 | **Consumer finance** | In 2015 I built [MobiLedger](https://www.techzim.co.zw/2015/02/zim-developer-comes-ecocash-ledger-app-monitor-m-money-transactions/) to help people track EcoCash transactions. In 2019, the MobiSoft team took [CashLedger](https://www.techzim.co.zw/2019/07/local-finance-app-cashledger-now-available-globally/) beyond Zimbabwe. |
 
-## The work behind the screens
+## How I think about platform architecture
 
-Two questions I ask when building a system: What will the person using it have to do twice? And what will the person operating it see when something goes wrong? Those questions apply whether it’s a transfer that times out, a tax receipt that needs correcting, or an AI answer that someone has to verify.
-
-### How I design a transaction workflow
-
-This is a design pattern I use for systems that depend on another service. It shows what should happen when the outcome is unclear.
+A bank should be able to add a channel without rebuilding the workflows behind it. The channels can feel different while payment rules, approvals and records stay consistent. The diagram shows the boundaries I look for when designing that kind of platform.
 
 ```mermaid
 graph TD
-    A["Customer or staff request"] --> B["Check identity and permissions"]
-    B --> C["Record request and reference"]
-    C --> D["Call the external service"]
-    D --> E{"Outcome confirmed?"}
-    E -->|Yes| F["Record and show the result"]
-    E -->|Unclear| G["Check status and reconcile"]
-    G -->|Resolved| F
-    G -->|Unresolved| H["Send for operator review"]
-    H --> F
+    A["Customer channels: mobile, web, USSD and messaging"] --> C["Shared workflows: onboarding, payments and servicing"]
+    B["Staff and agency banking"] --> C
+    C --> D["Controls: access, approvals, limits and audit"]
+    C --> E["Integrations: core banking, payment networks and verification"]
+    D --> F["Operations: reporting, reconciliation and support"]
+    E --> F
 ```
 
-### Map of my work
+## Map of my work
 
 ```mermaid
 mindmap
   root((Gedion Moyo))
-    Money and banking
+    Banking and payments
+      Digital and agency banking
       Mobile money and personal finance
-      Digital channels and agency banking
-      Payments and reconciliation
     Business operations
-      ERP and point of sale
-      Fiscal invoicing
-      Freight and trade workflows
+      ERP and fiscal invoicing
+      Freight and trade
     AI and information
-      Document answers with sources
-      Editorial agents and publishing
-    Engineering delivery
-      Product and interface design
-      APIs and integrations
-      Testing and releases
+      Document intelligence
+      Editorial workflows
+    Engineering leadership
+      Product direction
+      Platform architecture
+      Delivery and operations
 ```
 
-I work across product design, application architecture, APIs, testing and deployment. I spend much of my time with PHP and Laravel, TypeScript, Python and GitHub Actions. Most of my GitHub work is in private repositories, so the public links above are the best way to see what I work on.
+## What I look for in a design
+
+Can the next product reuse it? Can the institution operate it without the people who built it? Can a team change one part without putting the rest at risk? Those questions guide what I standardise, where I leave teams room to choose, and what I’m willing to put into production.
+
+Most of my GitHub work is in private repositories. The links above show the public side of that work.
